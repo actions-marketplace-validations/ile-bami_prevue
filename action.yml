@@ -79,7 +79,7 @@ runs:
       if: ${{ !contains(fromJSON(inputs.labels_json), inputs.label) }}
       shell: bash
       env:
-        GH_TOKEN: ${{ inputs.codespaces_pat }}
+        TOKEN: ${{ inputs.codespaces_pat }}
         PR_NUMBER: ${{ inputs.pr_number }}
       run: |
         set -uo pipefail
@@ -90,7 +90,7 @@ runs:
 
         echo "Logging in..."
 
-        echo "${GH_TOKEN}" | gh auth login --with-token
+        echo "${TOKEN}" | gh auth login --with-token
         
         echo "Checking for existing codespace for ${OWNER}/${REPO} on branch ${BRANCH}..."
 
