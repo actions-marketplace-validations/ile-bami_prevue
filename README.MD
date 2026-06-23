@@ -68,7 +68,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run Codespace Manager
-        uses: your-username/prevue@v1
+        uses: b4m11/prevue@alpha
         with:
           codespaces_pat: ${{ secrets.PREVUE_KEY }}
           pr_number: ${{ github.event.pull_request.number }}
