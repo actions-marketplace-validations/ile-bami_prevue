@@ -17,6 +17,9 @@ inputs:
     description: 'The PR label name that triggers the preview environment'
     required: false
     default: 'preview-url'
+branding:
+  icon: 'monitor'
+  color: 'black'
 
 runs:
   using: 'composite'
