@@ -40,7 +40,7 @@ runs:
 
         echo "Logging in..."
 
-        echo "${{ inputs.codespaces_pat }}" | gh auth login --with-token
+        echo "${GH_TOKEN}" | gh auth login --with-token
 
         echo "Creating codespace for ${OWNER}/${REPO} on branch ${BRANCH}..."
 
