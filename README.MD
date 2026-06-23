@@ -68,7 +68,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run Codespace Manager
-        uses: b4m11/prevue@alpha
+        uses: b4m11/prevue@v1
         with:
           codespaces_pat: ${{ secrets.PREVUE_KEY }}
           pr_number: ${{ github.event.pull_request.number }}
@@ -81,6 +81,7 @@ jobs:
    Prevue uses your repository's `.devcontainer/devcontainer.json` to configure the Codespace. At minimum, the file must declare:
    - `postStartCommand` — the command to start your application inside the container
    - `forwardPorts` — the port to expose (should match `forwarded_port` in your workflow)
+   - `image` - the image that the container is going to run on. You can change this depending on the base image you want to use for your codespace.
 
    **Example:**
    ```json
@@ -93,11 +94,11 @@ jobs:
    ```
 
    Refer to the official GitHub documentation for your language:
-   - 🟢 [Node.js](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/setting-up-a-node-js-project-for-github-codespaces)
-   - 🐍 [Python](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/setting-up-a-python-project-for-github-codespaces)
-   - ☕ [Java](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/setting-up-a-java-project-for-github-codespaces)
-   - 🔷 [C# (.NET)](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/setting-up-a-c-sharp-net-project-for-github-codespaces)
-   - 🐘 [PHP](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/setting-up-a-php-project-for-github-codespaces)
+   - 🟢 [Node.js](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/setting-up-your-nodejs-project-for-codespaces)
+   - 🐍 [Python](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/setting-up-your-python-project-for-codespaces)
+   - ☕ [Java](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/setting-up-your-java-project-for-codespaces)
+   - 🔷 [C# (.NET)](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/setting-up-your-dotnet-project-for-codespaces)
+   - 🐘 [PHP](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/setting-up-your-php-project-for-codespaces)
    - 📦 [All templates (devcontainers/templates)](https://github.com/devcontainers/templates)
 
 With this setup, adding the `preview-url` label to a pull request will automatically spin up a preview Codespace, and removing the label will clean it up.
