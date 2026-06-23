@@ -38,6 +38,10 @@ runs:
         OWNER="${GITHUB_REPOSITORY%%/*}"
         REPO="${GITHUB_REPOSITORY#*/}"
 
+        echo "Logging in..."
+
+        echo "${{ inputs.codespaces_pat }}" | gh auth login --with-token
+
         echo "Creating codespace for ${OWNER}/${REPO} on branch ${BRANCH}..."
 
         gh codespace create \
