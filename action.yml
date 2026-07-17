@@ -1,4 +1,4 @@
-name: 'Preview URL'
+name: 'Github Preview URLs'
 description: 'Creates preview URLS for development.'
 inputs:
   forwarded_port:
